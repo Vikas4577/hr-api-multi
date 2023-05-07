@@ -19,5 +19,29 @@ pipeline{
                 echo "deploying to dev environment"
             }
         }
+        stage("QA Deploy"){
+            when{
+                branch'qa'
+            }
+            steps{
+                echo "deploying to qa environment"
+            }
+        }
+        stage("UAT Deploy"){
+            when{
+                branch'uat'
+            }
+            steps{
+                echo "deploying to uat environment"
+            }
+        }
+        stage("Prod Deploy"){
+            when{
+                branch'maim'
+            }
+            steps{
+                echo "deploying to production environment"
+            }
+        }
     }
 }
